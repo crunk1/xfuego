@@ -48,7 +48,8 @@ type Params struct {
     HeaderParam  bool   `header:",,default=true"`  // default=true (and therefore optional)
     CookieParam  *int   `cookie:""`                // optional (because of pointer) with no default
 
-    WithExamples int `query:",,example=Example1=123,example=Example2=456"` // adds OpenAPI examples: "Example1" and "Example2" as 123 and 456
+    ParamWithExamples int `query:",,example=Example1=123,example=Example2=456"` // adds OpenAPI examples: "Example1" and "Example2" as 123 and 456
+    NullableParam     xfuego.Nullable[string] `query:""` // nullable parameter
 }
 
 type ReqBody ...
